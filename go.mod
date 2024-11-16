@@ -1,4 +1,4 @@
-module go-skelmi
+module github.com/pavel-vorobyev/go-skelmi
 
 go 1.23.3
 
