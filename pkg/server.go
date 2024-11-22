@@ -31,8 +31,9 @@ func (s *Server) RegisterBlock(block Block) {
 	for _, h := range block.GetHandlers() {
 		s.echo.Add(h.Method, h.Path, h.Handle, h.Middlewares...)
 	}
+	group := s.echo.Group(block.GetPath())
 	for _, m := range block.GetMiddlewares() {
-		s.echo.Use(m)
+		group.Use(m.Relay)
 	}
 }
 
