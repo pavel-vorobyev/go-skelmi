@@ -32,7 +32,7 @@ func (s *Server) RegisterBlock(block Block) {
 		s.echo.Add(h.Method, h.Path, h.Handle, h.Middlewares...)
 	}
 	for _, m := range block.GetMiddlewares() {
-		s.echo.Use(m.Relay)
+		s.echo.Use(m)
 	}
 }
 
