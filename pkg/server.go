@@ -29,11 +29,11 @@ func NewServer(port int32, logger *slog.Logger) *Server {
 // Each block provides list of middlewares required for it's work
 func (s *Server) RegisterBlock(block Block) {
 	group := s.echo.Group(block.GetPath())
-	for _, h := range block.GetHandlers() {
-		group.Add(h.Method, h.Path, h.Handle, h.Middlewares...)
-	}
 	for _, m := range block.GetMiddlewares() {
 		group.Use(m.Relay)
+	}
+	for _, h := range block.GetHandlers() {
+		group.Add(h.Method, h.Path, h.Handle, h.Middlewares...)
 	}
 }
 
