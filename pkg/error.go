@@ -5,28 +5,28 @@ import (
 	"net/http"
 )
 
-func ErrorBadRequest(message string) *echo.HTTPError {
-	return echo.NewHTTPError(http.StatusBadRequest, message)
+func ErrorBadRequest() *echo.HTTPError {
+	return echo.NewHTTPError(http.StatusBadRequest, "Bad request")
 }
 
-func ErrorUnauthorized(message string) *echo.HTTPError {
-	return echo.NewHTTPError(http.StatusUnauthorized, message)
+func ErrorUnauthorized() *echo.HTTPError {
+	return echo.NewHTTPError(http.StatusUnauthorized, "Unauthorized")
 }
 
-func ErrorForbidden(message string) *echo.HTTPError {
-	return echo.NewHTTPError(http.StatusForbidden, message)
+func ErrorForbidden() *echo.HTTPError {
+	return echo.NewHTTPError(http.StatusForbidden, "Forbidden")
 }
 
-func ErrorNotFound(message string) *echo.HTTPError {
-	return echo.NewHTTPError(http.StatusNotFound, message)
+func ErrorNotFound() *echo.HTTPError {
+	return echo.NewHTTPError(http.StatusNotFound, "Not found")
 }
 
-func ErrorConflict(message string) *echo.HTTPError {
-	return echo.NewHTTPError(http.StatusConflict, message)
+func ErrorConflict() *echo.HTTPError {
+	return echo.NewHTTPError(http.StatusConflict, "Conflict")
 }
 
-func ErrorUnprocessableEntity(message string) *echo.HTTPError {
-	return echo.NewHTTPError(http.StatusUnprocessableEntity, message)
+func ErrorUnprocessableEntity() *echo.HTTPError {
+	return echo.NewHTTPError(http.StatusUnprocessableEntity, "Unprocessable entity")
 }
 
 func ErrorInternal(message string) *echo.HTTPError {
